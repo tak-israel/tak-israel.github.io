@@ -13,14 +13,21 @@
         <p>
             Tak is a great game, and the people in Israel should know about it
         </p>
-
         <div class="buttons">
-            <a href="https://crabfragmentlabs.com/tak">
-                <button>Crab Fragment Labs</button>
-            </a>
-            <a href="https://ustak.org">
-                <button>US Tak Association</button>
-            </a>
+            <div class="buttons-line">
+                <a href="https://crabfragmentlabs.com/tak">
+                    <button>Crab Fragment Labs</button>
+                </a>
+                <a href="https://ustak.org">
+                    <button>US Tak Association</button>
+                </a>
+            </div>
+            <div class="buttons-line">
+                <a href="https://discord.gg/dCm5XDcpn7">
+                    <button class="button-marked">Discord</button>
+                </a>
+            </div>
+
         </div>
     </div>
 </body>
@@ -36,9 +43,23 @@
     .buttons {
         margin-top: 2.9rem;
         display: flex;
-        flex-wrap: wrap;
         justify-content: center;
-        row-gap: 11px;
+        flex-direction: column;
+        gap: 11px;
+    }
+
+    .buttons-line {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: center;
+        gap: 11px;
+    }
+
+    @media (max-width: 768px) {
+        .buttons-line {
+            flex-direction: column;
+        }
     }
 
     .buttons > a {
@@ -50,6 +71,7 @@
         outline-color: transparent;
         min-width: 5.6rem;
         height: 2.59rem;
+        width: 12.5rem;
         max-height: 2.59rem;
         font-size: 1.06rem;
         text-align: center;
@@ -58,8 +80,15 @@
         border: 2px solid rgb(111, 138, 214);
         border-radius: 12px;
     }
+    .button-marked {
+        background-color: rgb(87 99 132);
+        border: 2px solid rgb(87 99 132);
+        color: white;
+        box-shadow: 0 6px 23px 0 rgb(0 0 0 / 20%), 0 2px 10px 0 rgb(0 0 0 / 19%);
+    }
     button:hover {
         background-color: rgb(111, 138, 214);
+        border: 2px solid rgb(111, 138, 214);
         cursor: pointer;
         color: white;
         box-shadow: 0 6px 23px 0 rgb(0 0 0 / 20%), 0 2px 10px 0 rgb(0 0 0 / 19%);
